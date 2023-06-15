@@ -7,6 +7,7 @@ const RestaurantList = ({ data }) => {
     return (
       <Restaurant
         key={restaurant.id}
+        id={restaurant.id}
         name={restaurant.name}
         cuisine={restaurant.cuisine}
         rating={restaurant.rating}
