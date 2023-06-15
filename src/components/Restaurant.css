@@ -1,3 +1,15 @@
 .restaurant-title {
     color: purple;
 }
+
+.high-rating {
+    color: green;
+}
+
+.rating {
+    color: cornflowerblue;
+}
+
+.low-rating {
+    color: red;
+}
