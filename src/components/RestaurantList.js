@@ -1,7 +1,7 @@
 import Restaurant from "./Restaurant"
 import PropTypes from 'prop-types';
 
-const RestaurantList = ({ data }) => {
+const RestaurantList = ({ data, updateRating, deleteRestaurant}) => {
 
   const restaurantComponents = data.map((restaurant) => {
     return (
@@ -12,6 +12,8 @@ const RestaurantList = ({ data }) => {
         cuisine={restaurant.cuisine}
         rating={restaurant.rating}
         distance={restaurant.distance}
+        updateRating={updateRating}
+        deleteRestaurant={deleteRestaurant}
       />
     );
   });
@@ -31,7 +33,8 @@ RestaurantList.propTypes = {
     cuisine: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
     distance: PropTypes.string.isRequired
-  })).isRequired
+  })).isRequired,
+  updateRating: PropTypes.func.isRequired
 };
 
 export default RestaurantList;
