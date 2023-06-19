@@ -1,6 +1,6 @@
 import './Restaurant.css';
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React from 'react';
 
 const Restaurant = ({ id, name, cuisine, rating, distance, updateRating, deleteRestaurant}) => {
   const determineColor = () => {
