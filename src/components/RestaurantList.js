@@ -1,9 +1,9 @@
 import Restaurant from "./Restaurant"
 import PropTypes from 'prop-types';
 
-const RestaurantList = ({ data, updateRating, deleteRestaurant}) => {
+const RestaurantList = ({ restaurantData, updateRating, deleteRestaurant}) => {
 
-  const restaurantComponents = data.map((restaurant) => {
+  const restaurantComponents = restaurantData.map((restaurant) => {
     return (
       <Restaurant
         key={restaurant.id}
@@ -27,14 +27,15 @@ const RestaurantList = ({ data, updateRating, deleteRestaurant}) => {
 };
 
 RestaurantList.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({
+  restaurantData: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     cuisine: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
     distance: PropTypes.string.isRequired
   })).isRequired,
-  updateRating: PropTypes.func.isRequired
+  updateRating: PropTypes.func.isRequired,
+  deleteRestaurant: PropTypes.func.isRequired
 };
 
 export default RestaurantList;
