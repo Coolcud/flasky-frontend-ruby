@@ -2,7 +2,7 @@ import './App.css';
 import RestaurantList from './components/RestaurantList';
 import { useState } from 'react';
 
-const data = [
+const restaurantData = [
   {id: 1, name: "Salty's", cuisine: "Seafood", rating: 4, distance: "5 miles"},
   {id: 2, name: "Toulouse", cuisine: "Creole", rating: 2, distance: "2 miles"},
   {id: 3, name: "Tanoor", cuisine: "Arab", rating: 4, distance: "2.5 miles"},
@@ -10,7 +10,7 @@ const data = [
 ];
 
 function App() {
-  const [restaurants, setRestaurants] = useState(data);
+  const [restaurants, setRestaurants] = useState(restaurantData);
 
   const changeRating = (id, originalRating, direction) => {
     const newRestaurants = restaurants.map((restaurant) => {
@@ -31,15 +31,28 @@ function App() {
   };
 
   const deleteRestaurant = (id) => {
-    setRestaurants(oldData => {
-      return oldData.filter(rest => rest.id !== id);
+    setRestaurants(restaurants => {
+      return restaurants.filter(rest => rest.id !== id);
     });
+
+    // const newRestaurants = restaurants.filter(
+    //   (restaurant) => restaurant.id !== id
+    // );
+    // setRestaurants(newRestaurants);
+
+    // const newRestaurants = [];
+    // for (let restaurant of restaurants) {
+    //   if (restaurant.id !== id) {
+    //     newRestaurants.push(restaurant);
+    //   }
+    // }
+    // setRestaurants(newRestaurants);
   };
 
   return (
     <div className='App'>
       <RestaurantList
-        data={restaurants}
+        restaurantData={restaurants}
         updateRating={changeRating}
         deleteRestaurant={deleteRestaurant}
       />
