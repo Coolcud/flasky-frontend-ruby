@@ -11,7 +11,7 @@ const RestaurantList = ({ restaurantData, updateRating, deleteRestaurant }) => {
         name={restaurant.name}
         cuisine={restaurant.cuisine}
         rating={restaurant.rating}
-        distance={restaurant.distance}
+        distance={restaurant.distance_from_ada}
         updateRating={updateRating}
         deleteRestaurant={deleteRestaurant}
       />
@@ -32,7 +32,7 @@ RestaurantList.propTypes = {
     name: PropTypes.string.isRequired,
     cuisine: PropTypes.string.isRequired,
     rating: PropTypes.number.isRequired,
-    distance: PropTypes.string.isRequired
+    distance_from_ada: PropTypes.number.isRequired
   })).isRequired,
   updateRating: PropTypes.func.isRequired,
   deleteRestaurant: PropTypes.func.isRequired
