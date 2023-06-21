@@ -2,7 +2,7 @@ import './Restaurant.css';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const Restaurant = ({ id, name, cuisine, rating, distance, updateRating, deleteRestaurant}) => {
+const Restaurant = ({ id, name, cuisine, rating, distance, updateRating, deleteRestaurant }) => {
   const determineColor = () => {
     if (rating > 5) {
       return 'high-rating';

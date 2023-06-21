@@ -1,7 +1,7 @@
 import Restaurant from "./Restaurant"
 import PropTypes from 'prop-types';
 
-const RestaurantList = ({ restaurantData, updateRating, deleteRestaurant}) => {
+const RestaurantList = ({ restaurantData, updateRating, deleteRestaurant }) => {
 
   const restaurantComponents = restaurantData.map((restaurant) => {
     return (
