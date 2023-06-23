@@ -23,6 +23,16 @@ function App() {
     getRestaurants();
   }, []);
 
+  const postRestaurant = (newRestaurantData) => {
+    axios.post(API, newRestaurantData)
+      .then(() => {
+        getRestaurants();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   // changeRating that updates state via API call
   const changeRating = (id, originalRating, direction) => {
     const newRating = direction === "up" ? originalRating + 1 : originalRating - 1;
@@ -57,7 +67,9 @@ function App() {
         updateRating={changeRating}
         deleteRestaurant={deleteRestaurant}
       />
-      <NewRestaurantForm />
+      <NewRestaurantForm
+        addRestaurant={postRestaurant}
+      />
     </div>
   );
 }
